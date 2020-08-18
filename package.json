@@ -4,7 +4,7 @@
   "description": "a demo repo for github actions and code scanning",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sopetrichor/github-actions-demo/issues"
   },
-  "homepage": "https://github.com/sopetrichor/github-actions-demo#readme"
+  "homepage": "https://github.com/sopetrichor/github-actions-demo#readme",
+  "dependencies": {
+    "jest": "^26.4.0"
+  }
 }
