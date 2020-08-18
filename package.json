@@ -1,0 +1,19 @@
+{
+  "name": "github-actions-demo",
+  "version": "1.0.0",
+  "description": "a demo repo for github actions and code scanning",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sopetrichor/github-actions-demo.git"
+  },
+  "author": "sopetrichor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sopetrichor/github-actions-demo/issues"
+  },
+  "homepage": "https://github.com/sopetrichor/github-actions-demo#readme"
+}
