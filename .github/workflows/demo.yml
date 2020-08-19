@@ -9,9 +9,8 @@ jobs:
       - uses: actions/checkout@master
         name: Lint
         id: eslint
-      - run: |
-          npm install
-          npm run lint sum.*
+      - run: npm install
+      - run: npm run lint sum.*
   test:
     name: Run unit tests with Jest
     runs-on: ubuntu-latest
@@ -20,9 +19,8 @@ jobs:
       - uses: actions/checkout@master
         name: Test
         id: jest
-      - run: |
-          npm install
-          npm run test
+      - run: npm install
+      - run: npm run test
   format:
     name: Code Formatting with Prettier
     runs-on: ubuntu-latest
@@ -35,9 +33,8 @@ jobs:
         with:
           node-version: "12.x"
       - name: Format
-        run: |
-          npm install
-          npm run format
+      - run: npm install
+      - run: npm run format
       - name: Commit Change
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
         with: 
