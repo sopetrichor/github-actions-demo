@@ -15,6 +15,7 @@ jobs:
   format:
     name: Code Formatting with Prettier
     runs-on: ubuntu-latest
+    if: success()
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
