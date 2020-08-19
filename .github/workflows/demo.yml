@@ -1,0 +1,13 @@
+name: Jest and CodeQL
+on: [pull_request]
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        name: Test
+        id: jest
+      - run: npm install
+      - run: npm run test    
