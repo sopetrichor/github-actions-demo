@@ -11,7 +11,7 @@ jobs:
         id: eslint
       - run: |
           npm install
-          npm run lint demo.*
+          npm run lint sum.*
   test:
     name: Run unit tests with Jest
     runs-on: ubuntu-latest
