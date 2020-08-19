@@ -2,9 +2,7 @@ const sum = require("./sum");
 
 describe("sum", () => {
   it("adds 1 + 4 to equal 5", () => {
-    expect(
-      sum(1, 4))
-.toBe(5);
+    expect(sum(1, 4)).toBe(5);
   });
   it("adds 2 + 5 to equal 7", () => {
     expect(sum(2, 5)).toBe(7);
