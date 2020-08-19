@@ -6,7 +6,7 @@ jobs:
     name: Linting with ESLint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
         name: Lint
         id: eslint
       - run: npm install
@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint]
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
         name: Test
         id: jest
-      - run: npm install
+#      - run: npm install
       - run: npm run test
   format:
     name: Code Formatting with Prettier
@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: "12.x"
         name: Format
-      - run: npm install
+#      - run: npm install
       - run: npm run format
       - name: Commit Change
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
