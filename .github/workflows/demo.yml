@@ -6,13 +6,11 @@ jobs:
     name: Linting with ESLint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: hallee/eslint-action@1.0.3
-        # GITHUB_TOKEN in forked repositories is read-only
-        # https://help.github.com/en/actions/reference/events-that-trigger-workflows#pull-request-event-pull_request
-        if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }} 
-        with:
-          repo-token: ${{secrets.GITHUB_TOKEN}}
+      - uses: actions/checkout@master
+        name: Lint
+        id: eslint
+      - run: npm install
+      - run: npm run lint sum.*
   test:
     name: Run unit tests with Jest
     runs-on: ubuntu-latest
@@ -21,9 +19,8 @@ jobs:
       - uses: actions/checkout@master
         name: Test
         id: jest
-      - run: |
-          npm install
-          npm run test
+      - run: npm install
+      - run: npm run test
   format:
     name: Code Formatting with Prettier
     runs-on: ubuntu-latest
@@ -36,9 +33,8 @@ jobs:
         with:
           node-version: "12.x"
       - name: Format
-        run: |
-          npm install
-          npm run format
+      - run: npm install
+      - run: npm run format
       - name: Commit Change
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
         with: 
