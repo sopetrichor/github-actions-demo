@@ -10,4 +10,8 @@ describe('sum', () => {
     it('adds 3 + 6 to equal 9', () => {
         expect(sum(3, 6)).toBe(9);
     });
+    it('add 1 + 6 to equal 7', () => {
+    expect(sum(1, 6))
+        .toBe(7);
+    });
 });
