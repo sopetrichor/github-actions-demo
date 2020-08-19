@@ -9,9 +9,8 @@ jobs:
       - uses: actions/checkout@master
         name: Lint
         id: eslint
-      - run: |
-          npm install
-          npm run lint sum.*
+      - run: npm install
+      - run: npm run lint sum.*
   test:
     name: Run unit tests with Jest
     runs-on: ubuntu-latest
