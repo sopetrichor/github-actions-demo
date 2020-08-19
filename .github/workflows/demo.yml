@@ -1,13 +1,28 @@
-name: Jest and CodeQL
+name: Continous Integration
 on: [pull_request]
 
 jobs:
   test:
-    name: Run tests
+    name: Run unit tests with Jest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
         name: Test
         id: jest
-      - run: npm install
-      - run: npm run test    
+      - run: npm ci
+      - run: npm run test
+  format:
+    name: Code Formatting with Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        name: Format
+      - run: |
+          npm ci
+          npm run format
+      - name: Commit Change
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with: 
+          commit_message: Apply formatting changes
+          branch: ${{ github.head_ref }}
