@@ -2,6 +2,16 @@ name: Continous Integration
 on: [pull_request, workflow_dispatch]
 
 jobs:
+  lint:
+    name: Linting with ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        name: Lint
+        id: eslint
+      - run: |
+          npm install
+          npm run lint demo.*
   test:
     name: Run unit tests with Jest
     runs-on: ubuntu-latest
