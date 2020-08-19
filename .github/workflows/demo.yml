@@ -9,8 +9,9 @@ jobs:
       - uses: actions/checkout@master
         name: Test
         id: jest
-      - run: npm ci
-      - run: npm run test
+      - run: |
+          npm install
+          npm run test
   format:
     name: Code Formatting with Prettier
     runs-on: ubuntu-latest
@@ -19,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v1
         name: Format
       - run: |
-          npm ci
+          npm install
           npm run format
       - name: Commit Change
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
