@@ -8,6 +8,7 @@ describe("sum", () => {
     expect(sum(2, 5)).toBe(7);
   });
   it("adds 3 + 6 to equal 9", () => {
-    expect(sum(3, 6)).toBe(9);
+    expect(sum(3, 6))
+.toBe(9);
   });
 });
